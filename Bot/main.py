@@ -116,7 +116,7 @@ async def eval_(ctx, *, code):
     exec(compile(parsed, filename="<ast>", mode="exec"), env)
     result = (await eval(f"{fn_name}()", env))
     try:
-      await ctx.send(result)
+      await ctx.send(list(result))
     except:
       pass
 
